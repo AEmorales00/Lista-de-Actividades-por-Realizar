@@ -1,0 +1,31 @@
+{% include 'index.html' %}
+{% block index %}
+<br>
+<br>
+    <table>
+        <a href="{% url 'core:crear-persona'%}">Agregar Asignacion</a><br>
+        <a href="{% url 'core:crear-usuario'%}">Crear Usuario</a>
+
+            {% for actividaporRealizar in actividaporRealizar %}
+            <h1>Agregar Asignacion</h1>
+            <thead>
+                <tr>
+            <th>Nombre</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            <tbody>
+                </tr>
+            </thead>
+            <tr>
+            <td>{{actividaporRealizar.nombre}}</td>
+            <td>{{actividaporRealizar.fecha_vencimiento}}</td>
+            <td>{{actividaporRealizar.prioridad}}</td>
+            <td><a type="button" href="{% url 'core:eliminar' actividaporRealizar.id%}">Terminar</a></td>
+            <td><a type="button" href="{% url 'core:editar_persona' actividaporRealizar.id%}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        
+{% endblock index %}

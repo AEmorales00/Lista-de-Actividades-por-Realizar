@@ -1,0 +1,11 @@
+{% include 'index.html' %}
+
+<form method="post">
+    {%csrf_token%}
+    {{form}}
+    <input 
+    class="btn btn-primary"
+    type="submit"
+    value="Guardar"
+    />
+</form>
